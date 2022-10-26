@@ -8,9 +8,7 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-
-HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n💞 Im **KRISHNA VC PLAYER**. \n**I Can Stream Videos & Audios On Voice Chat Of Telegram Groups**"
-
+HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 Im **krishna Vc Player**. \n**I Can Stream music On Voice Chat Of Telegram Groups**"
 HELP_TEXT = """
 🏷️ **Setup Guide** :
 
@@ -25,11 +23,8 @@ USER_TEXT = """
 🏷️ **Users Commands** :
 
 \u2022 /play <Query> To Play a Song.
-\u2022 /song To Download A Audio file from YouTube. 
-\u2022 /video to download Video From YouTube
+\u2022 /stream <Live Url> To Play Live Streams 👇\n /song To Download A Audio file from YouTube. \n /video to download Videos.
 """
-
-
 
 ADMIN = """
 🏷️ **admin Commands** :
@@ -117,7 +112,35 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    
+    elif query.data=="raid":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                RAID_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="spam":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                SPAM_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
         except MessageNotModified:
             pass
 
