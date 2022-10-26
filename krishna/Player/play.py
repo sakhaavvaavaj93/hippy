@@ -216,9 +216,7 @@ async def play(c: Client, m: Message):
                 duration = search[2]
                 thumbnail = search[3]
                 userid = m.from_user.id
-                gcname = m.chat.title
-                ctitle = await CHAT_TITLE(gcname)
-                image = await generate_cover(thumbnail, title, userid, ctitle)
+                gcname = m.chat.title                
                 format = "bestaudio"
                 abhi, ytlink = await ytdl(format, url)
                 if abhi == 0:
@@ -226,18 +224,10 @@ async def play(c: Client, m: Message):
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                        await suhu.delete()
-                        requester = (
-                            f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
-                        )
-                        await m.reply_photo(
-                            photo=image,
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname[:22]}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🎧 **Request by:** {requester}",
-                            reply_markup=keyboard,
-                        )
+                        await suhu.delete()                     
                     else:
                         try:
-                            await suhu.edit(
+                            await suhu.reply_text(
                             f"**Downloader**\n\n**Title**: {title[:22]}\n\n100% ████████████100%\n\n**Time Taken**: 00:00 Seconds\n\n**Converting Audio[FFmpeg Process]**"
                         )
                             await call_py.join_group_call(
