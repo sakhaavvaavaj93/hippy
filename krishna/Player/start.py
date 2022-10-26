@@ -111,39 +111,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.edit_message_text(ADMIN, reply_markup=reply_markup)
         except MessageNotModified:
             pass
-
-    elif query.data=="raid":
-        buttons = [
-            [
-                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
-                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        try:
-            await query.edit_message_text(
-                RAID_TEXT.format(query.from_user.first_name, query.from_user.id),
-                reply_markup=reply_markup
-            )
-        except MessageNotModified:
-            pass
-
-    elif query.data=="spam":
-        buttons = [
-            [
-                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
-                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        try:
-            await query.edit_message_text(
-                SPAM_TEXT.format(query.from_user.first_name, query.from_user.id),
-                reply_markup=reply_markup
-            )
-        except MessageNotModified:
-            pass
-
     elif query.data=="close":
         try:
             await query.message.delete()
