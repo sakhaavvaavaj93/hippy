@@ -227,7 +227,7 @@ async def play(c: Client, m: Message):
                         await suhu.delete()                     
                     else:
                         try:
-                            await suhu.reply_text(
+                            await suhu.edit(
                             f"**Downloader**\n\n**Title**: {title[:22]}\n\n100% ████████████100%\n\n**Time Taken**: 00:00 Seconds\n\n**Converting Audio[FFmpeg Process]**"
                         )
                             await call_py.join_group_call(
