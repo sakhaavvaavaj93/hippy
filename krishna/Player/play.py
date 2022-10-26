@@ -200,7 +200,7 @@ async def play(c: Client, m: Message):
                     ]
                 )
             )
-          await m.delete()
+          
         else:
             suhu = await m.reply_text(
         f"**Downloading**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
