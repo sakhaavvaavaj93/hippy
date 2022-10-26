@@ -24,10 +24,8 @@ USER_TEXT = """
 🏷️ **Users Commands** :
 
 \u2022 /play <Query> To Play a Song.
-\u2022 /vplay <Query> To Play Video.
 \u2022 /song To Download A Audio file from YouTube. 
 \u2022 /video to download Video From YouTube
-\u2022 /lyric to find Lyrics.
 """
 
 
