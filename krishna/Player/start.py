@@ -8,7 +8,8 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n💞 Im **krishna Vc Player**. \n**I Can Stream Videos & Audios On Voice Chat Of Telegram Groups \nPowered by [@DC_LOGS][https://t.me/DC_LOGS) | [@KRISHNA_THULSI](https://t.me/KRISHNA_THULSI).** \n**Please Note That :- Bot and userbot are Locked by Owner.**"
+
+HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n💞 Im **KRISHNA VC PLAYER**. \n**I Can Stream Videos & Audios On Voice Chat Of Telegram Groups**"
 
 HELP_TEXT = """
 🏷️ **Setup Guide** :
