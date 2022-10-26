@@ -148,6 +148,8 @@ async def vplay(c: Client, m: Message):
                 elif Q == 360:
                     amaze = LowQualityVideo()
                 await loser.edit("🔄 **Joining vc...**")
+                await sleep(3)
+                await loser.delete()
                 await call_py.join_group_call(
                     chat_id,
                     AudioVideoPiped(
@@ -158,7 +160,7 @@ async def vplay(c: Client, m: Message):
                     stream_type=StreamType().local_stream,
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
-                await loser.delete()
+                
         else:
             if len(m.command) < 2:
                 await m.reply_photo(
