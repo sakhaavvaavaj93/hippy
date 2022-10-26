@@ -39,8 +39,8 @@ def admeme_callback(_, query):
         query.message.edit(f'unbanned [{scammer}](tg://user?id={scammer})',
                            parse_mode='markdown')
     else:
-        await message.reply('You are not admin!')
-        await message.delete()
+        message.reply('You are not admin!')
+        
         
 
 
