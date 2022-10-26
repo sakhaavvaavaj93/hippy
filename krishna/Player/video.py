@@ -270,4 +270,4 @@ async def vplay(c: Client, m: Message):
                                 stream_type=StreamType().local_stream,
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
-                            await loser.delete()
+                            
