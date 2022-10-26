@@ -141,7 +141,7 @@ async def start(client: Client, message: Message):
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client: Client, message: Message):
     get_me = await client.get_me()
-    self.username = get_me.username
+    USERNAME = get_me.username
     buttons = [
             [
                 InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", url="https://telegra.ph/𝗕ooo--‌ᴀꜰᴋ-ᴏꜰꜰʟɪɴᴇ-05-17-2"),
