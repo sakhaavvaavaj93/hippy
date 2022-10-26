@@ -270,4 +270,6 @@ async def vplay(c: Client, m: Message):
                                 stream_type=StreamType().local_stream,
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
-                            
+                    except Exception as ep:
+                            await loser.delete()
+                            await m.reply_text(f"🚫 error: `{ep}`")
