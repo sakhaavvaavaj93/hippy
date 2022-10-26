@@ -8,7 +8,9 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 Im **krishna Vc Player**. \n**I Can Stream music On Voice Chat Of Telegram Groups**"
+
+HOME_TEXT = """👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 Im **krishna Vc Player**. \n**I Can Stream music On Voice Chat Of Telegram Groups**"""
+
 HELP_TEXT = """
 🏷️ **Setup Guide** :
 
@@ -23,7 +25,8 @@ USER_TEXT = """
 🏷️ **Users Commands** :
 
 \u2022 /play <Query> To Play a Song.
-\u2022 /stream <Live Url> To Play Live Streams 👇\n /song To Download A Audio file from YouTube. \n /video to download Videos.
+\u2022 /song To Download A Audio file from YouTube. 
+\u2022 /video to download Videos.
 """
 
 ADMIN = """
@@ -140,8 +143,7 @@ async def start(client: Client, message: Message):
 
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client: Client, message: Message):
-    get_me = await client.get_me()
-    USERNAME = get_me.username
+    get_me = await client.get_me()   
     buttons = [
             [
                 InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", url="https://telegra.ph/𝗕ooo--‌ᴀꜰᴋ-ᴏꜰꜰʟɪɴᴇ-05-17-2"),
